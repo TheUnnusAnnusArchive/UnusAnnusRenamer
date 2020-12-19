@@ -1,0 +1,21 @@
+{
+  "name": "unusannus-renamer",
+  "version": "1.0.0",
+  "description": "Renames the episode structure (001.mp4, 002.mp4) to have the actual video names.",
+  "main": "src/main.js",
+  "bin": "src/main.js",
+  "author": {
+    "name": "The Unus Annus Archive",
+    "email": "contact@unusannusarchive.tk",
+    "url": "https://www.unusannusarchive.tk"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "pkg": "^4.4.9"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "is-root": "^2.1.0",
+    "wget-improved": "^3.2.1"
+  }
+}
