@@ -106,7 +106,7 @@ function convert() {
         if (options.season == 0) {
           title = metadata[0][episode - 1].title.split('\\').join('').split('/').join('').split(':').join(' -').split('*').join('').split('?').join('').split('<').join('').split('>').join('').split('|').join('-')
         } else if (options.season == 1) {
-          const title = metadata[1][episode - 1].title.split('\\').join('').split('/').join('').split(':').join(' -').split('*').join('').split('?').join('').split('<').join('').split('>').join('').split('|').join('-')
+          title = metadata[1][episode - 1].title.split('\\').join('').split('/').join('').split(':').join(' -').split('*').join('').split('?').join('').split('<').join('').split('>').join('').split('|').join('-')
         } else {
           console.log('Please enter a valid season! (0 or 1)'.red)
           process.exit()
