@@ -102,19 +102,19 @@ function convert() {
       const episode = parseInt(dir[i].toLowerCase().replace('.mp4', ''))
       if (!isNaN(episode)) {
         console.log(`Working on ${dir[i]} (Episode ${episode})...`.cyan)
+        var title
         if (options.season == 0) {
-          const title = metadata[0][episode - 1].title.split('\\').join('').split('/').join('').split(':').join(' -').split('*').join('').split('?').join('').split('<').join('').split('>').join('').split('|').join('-')
-  
-          if (fs.existsSync(`${options.location}/${title}.mp4`)) {
-            fs.renameSync(`${options.location}/${dir[i]}`, `${options.location}/${title}-${dir[i]}`)
-          } else {
-            fs.renameSync(`${options.location}/${dir[i]}`, `${options.location}/${title}.mp4`)
-          }
+          title = metadata[0][episode - 1].title.split('\\').join('').split('/').join('').split(':').join(' -').split('*').join('').split('?').join('').split('<').join('').split('>').join('').split('|').join('-')
         } else if (options.season == 1) {
-  
+          const title = metadata[1][episode - 1].title.split('\\').join('').split('/').join('').split(':').join(' -').split('*').join('').split('?').join('').split('<').join('').split('>').join('').split('|').join('-')
         } else {
           console.log('Please enter a valid season! (0 or 1)'.red)
           process.exit()
+        }
+        if (fs.existsSync(`${options.location}/${title}.mp4`)) {
+          fs.renameSync(`${options.location}/${dir[i]}`, `${options.location}/${title}-${dir[i]}`)
+        } else {
+          fs.renameSync(`${options.location}/${dir[i]}`, `${options.location}/${title}.mp4`)
         }
         numconverted++
       }
