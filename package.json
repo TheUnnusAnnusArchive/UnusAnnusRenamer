@@ -1,6 +1,6 @@
 {
   "name": "unusannus-renamer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Renames the episode structure (001.mp4, 002.mp4) to have the actual video names.",
   "main": "src/main.js",
   "bin": "src/main.js",
@@ -11,11 +11,25 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "pkg": "^4.4.9"
+    "pkg": "^4.4.9",
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1"
   },
   "dependencies": {
     "colors": "^1.4.0",
     "is-root": "^2.1.0",
     "wget-improved": "^3.2.1"
+  },
+  "build": {
+    "productName": "Unus Annus Renamer",
+    "win": {
+      "target": ["portable"]
+    },
+    "linux": {
+      "target": ["AppImage"]
+    },
+    "mac": {
+      "target": ["zip"]
+    }
   }
 }

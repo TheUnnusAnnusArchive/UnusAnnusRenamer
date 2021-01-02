@@ -1,0 +1,58 @@
+:root {
+  font-family: arial;
+  -webkit-user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    background-color: #00000000;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #2c2c33;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+
+  html {
+    background: #1c1c1e;
+    color: #ffffff;
+  }
+
+  #console {
+    background: #13131480;
+  }
+}
+
+@media (prefers-color-scheme: no-preference) {
+
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background: #ffffff;
+  }
+
+  #console {
+    background: #f3f3f380;
+  }
+}
+
+body {
+  text-align: center;
+}
+
+#console {
+  position: absolute;
+  top: 280px;
+  left: 0px;
+  width: 100%;
+  height: calc(100vh - 280px);
+  text-align: left;
+  font-family: monospace;
+  overflow: scroll;
+}
