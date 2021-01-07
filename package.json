@@ -1,6 +1,6 @@
 {
   "name": "unusannus-renamer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Renames the episode structure (001.mp4, 002.mp4) to have the actual video names.",
   "main": "src/main.js",
   "bin": "src/main.js",
