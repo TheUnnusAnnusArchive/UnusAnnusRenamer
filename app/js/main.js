@@ -19,17 +19,19 @@ function openFolder() {
 
 function openMetadata() {
   let settings = {
-    properties: ['openFile', 'promptToCreate'],
+    defaultPath: 'metadata',
+    properties: ['createDirectory', 'showOverwriteConvirmation'],
     filters: [
       {
         name: 'JSON', extensions: ['json']
       }
     ]
   }
-  dialog.showOpenDialog(mainWindow, settings).then((file) => {
-    if (file.filePaths[0]) {
-      document.getElementById('metadataPath').innerText = file.filePaths[0]
-      options.metadataFile = file.filePaths[0]
+  dialog.showSaveDialog(mainWindow, settings).then((file) => {
+    console.log(file)
+    if (file.filePath) {
+      document.getElementById('metadataPath').innerText = file.filePath
+      options.metadataFile = file.filePath
     }
   })
 }
